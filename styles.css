@@ -1,0 +1,142 @@
+:root {
+  --bg-color: #121212;
+  --text-color: #fff;
+  --container-bg: #1e1e1e;
+  --neon-blue: #0ff;
+  --neon-pink: #ff00ff;
+  --neon-yellow: #ff0;
+  --hover-blue: #00c3ff;
+  --hover-pink: #ff00aa;
+  --disabled-color: #6c757d;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+.quiz-container {
+  background: var(--container-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  text-align: center;
+  width: 600px;
+  height: 400px;
+}
+
+#question {
+  color: #fff; /* Βεβαιώνουμε ότι η ερώτηση είναι ορατή */
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+#answers li {
+  background: var(--neon-blue);
+  color: black !important; /* Βεβαιώνουμε ότι το κείμενο είναι ευδιάκριτο */
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+}
+
+#answers li:hover {
+  background: var(--hover-blue);
+  transform: scale(1.05);
+}
+
+#answers {
+  list-style: none;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#start-btn {
+  background: var(--neon-pink);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s, transform 0.2s;
+  text-shadow: 0 0 5px rgba(255, 0, 255, 0.8);
+}
+
+#start-btn:disabled {
+  background: var(--disabled-color);
+  cursor: not-allowed;
+}
+
+#start-btn:hover:enabled {
+  background: var(--hover-pink);
+  transform: scale(1.05);
+}
+
+#timer {
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+}
+
+#result-box {
+  background: var(--container-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  text-align: center;
+}
+
+#score {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--neon-yellow);
+  text-shadow: 0 0 5px rgba(255, 255, 0, 0.8);
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: var(--neon-pink);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  text-shadow: 0 0 5px rgba(255, 0, 255, 0.8);
+}
+
+button:hover {
+  background: var(--hover-pink);
+  transform: scale(1.05);
+}
+
+@keyframes neonGlow {
+  0% {
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+  }
+  50% {
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+  }
+  100% {
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+  }
+}
+
+h1 {
+  animation: neonGlow 1.5s infinite alternate;
+}
